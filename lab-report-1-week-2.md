@@ -1,6 +1,7 @@
 # Lab Report 1
 
 ## Topic: Remote Access
+<br>
 
 ### Installing VSCode
 VSCode is a popular text editor / IDE. 
@@ -64,7 +65,7 @@ Normally you will be prompted to type your password after running the command. T
 <br>
 
 ### Setting an SSH Key
-It can be tedious to type out our password every time we interact with the server over SSH. By setting public/private SSH key pair on our local machine and adding our public key to the server's list of authorized keys we can avoid this.
+It can be tedious to type out your password every time we interact with the server over SSH. By setting a public/private SSH key pair on our local machine and adding our public key to the server's list of authorized keys we can avoid this.
 <br>
 <br>
 We can create a public/private SSH key pair on our local machine using the 'ssh-keygen' command. Make sure to enter nothing for the password if your goal is to be able to log in without using a password.
@@ -101,7 +102,7 @@ Here is an example:
 ![multiple_commands](./screenshots/multiple_commands.png)
 <br>
 <br>
-It doesn't take much imagination to think about how these two techniques could greatly optimize our workflow.
+It doesn't take much imagination to think about how these two techniques can greatly optimize our workflow.
 <br>
 <br>
 
