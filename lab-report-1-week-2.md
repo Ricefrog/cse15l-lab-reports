@@ -4,4 +4,4 @@
 <br>
 *A screenshot.*
 <br>
-[Home](/index.html)
+[Home](/cse15l-lab-reports/index.html)
