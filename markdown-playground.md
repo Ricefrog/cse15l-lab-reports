@@ -3,7 +3,7 @@
 # Big heading
 ## Medium heading
 [Don't click me!](https://news.ycombinator.com)
-![Cool image](https://static.wikia.nocookie.net/sel/images/6/65/Lain_s071.jpg/revision/latest?cb=20100513203649)
+![Cool image](./robloxPFP.png)
 
 > Blockquote
 
