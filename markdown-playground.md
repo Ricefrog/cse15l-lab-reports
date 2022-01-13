@@ -16,7 +16,7 @@
 3. third
 
 Horizontal line
-----
+___
 
 ```
 package main
