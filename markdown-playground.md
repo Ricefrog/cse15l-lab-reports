@@ -2,7 +2,7 @@
 **bold**
 # Big heading
 ## Medium heading
-[Don't click me!](news.ycombinator.com)
+[Don't click me!](https://news.ycombinator.com)
 ![Cool image](https://static.wikia.nocookie.net/sel/images/6/65/Lain_s071.jpg/revision/latest?cb=20100513203649)
 
 > Blockquote
