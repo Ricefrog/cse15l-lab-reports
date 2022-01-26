@@ -45,6 +45,12 @@ For example:
 *Here I run the 'ls' command to output all of the files and directories in my home directory followed by the 'cat' command to output the contents of the 'hello.c' file.*
 <br>
 <br>
+For example:
+![more commands](./screenshots/commands2.png)
+<br>
+*Here I run the 'mkdir' command to create a new directory. I use 'cd' to move into that directory. I then use the 'touch' command to create three text files. Next I use the 'rm' command to delete all files in the directory that start with the letter 'a'. I 'cd' back into my home directory and use 'rm' with the '-rf' flags to delete the directory I created at the beginning.*
+<br>
+<br>
 
 ### Moving Files with scp
 We can use the 'scp' command to copy files/directories over SSH from our local machine to a remote server and vice versa. 
@@ -103,6 +109,7 @@ Here is an example:
 <br>
 <br>
 It doesn't take much imagination to think about how these two techniques can greatly optimize our workflow.
+For example, if you had to run the same set of commands over and over again you can reduce the keystrokes for each iteration to two (up arrow to bring up the command, enter to run it).
 <br>
 <br>
 
