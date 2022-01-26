@@ -45,7 +45,7 @@ For example:
 *Here I run the 'ls' command to output all of the files and directories in my home directory followed by the 'cat' command to output the contents of the 'hello.c' file.*
 <br>
 <br>
-For example:
+Another example:
 ![more commands](./screenshots/commands2.png)
 <br>
 *Here I run the 'mkdir' command to create a new directory. I use 'cd' to move into that directory. I then use the 'touch' command to create three text files. Next I use the 'rm' command to delete all files in the directory that start with the letter 'a'. I 'cd' back into my home directory and use 'rm' with the '-rf' flags to delete the directory I created at the beginning.*
