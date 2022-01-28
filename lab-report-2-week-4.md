@@ -16,7 +16,7 @@ This the test file that caused a failure in our program.
 <br>
 ![test-file6](./screenshots/week4/test-file6.png)
 <br>
-https://github.com/JessalynWang/markdown-parse/blob/main/test-file6.md
+[https://github.com/JessalynWang/markdown-parse/blob/main/test-file6.md](https://github.com/JessalynWang/markdown-parse/blob/main/test-file6.md)
 <br>
 <br>
 The problem was that our program was including the URLs/sources of images, when the expected behavior was for images to be ignored, as they are not links. 
