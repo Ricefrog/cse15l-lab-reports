@@ -50,6 +50,15 @@ This was the change we made.
 This will break the loop if we detect that there are no more starting brackets in the 
 rest of the file, which would indicate that there are no more links to extract.
 
+<br>
+
+### In conclusion:
+- We first noticed a *symptom* in the output of our program -> our program was getting stuck in an infinite loop. 
+- The failure-inducing input was the only test file that did not end with a link; it had characters that trailed the end of the last link in the file.
+- We walked through the logic of our program to determine the *bug* that was causing our symptom. We saw that when a file had more characters after its final link it would
+prevent the exit condition of our while loop from ever being met.
+- We added a break condition in the loop that would execute if we could tell that there were no more links to be found in the rest of the file. This prevented the infinite loop from happening and the program began behaving as expected. 
+
 ## **Bug Fix 2**
 ___
 *This bug was found on the original MarkdownParse file that was provided by the professor.*
@@ -69,7 +78,6 @@ using a backslash and therefore was incorrectly extracting links when backslashe
 <br>
 
 ### The Symptom
-<br>
 
 This was the terminal output after running the program on the failing test file:
 <br>
@@ -100,6 +108,13 @@ the while loop of `getLinks` we use the `advance` function after each bracket/
 parentheses is found to move the index past the escaped characters we want to ignore. 
 This solution worked, and our program was able to ignore escaped characters when it 
 looked for links.
+
+<br>
+
+### In conclusion:
+- We first noticed a *symptom* in the output of our program -> our program was not ignoring escaped characters. 
+- By looking at our program we could easily see that it treated all characters the same; we needed to make it behave differently for escaped characters.
+- After adding some helper functions for ignoring escaped characters our program worked as expected and the bug was fixed.
 
 
 ## **Bug Fix 3**
@@ -167,13 +182,11 @@ of the loop. This will invalidate sequences that start with `![` from being cons
 as potential patterns for links in our program.
 
 <br>
-<br>
 
 ### In conclusion:
 - We first noticed a *symptom* in the output of our program -> our program was incorrectly treating images as links. 
 - The failure-inducing input was the only test file that contained an image. It was also the only test file that did result in a correct output.
-- We walked through the logic of our program to determine the *bug* that was causing or symptom. It was due to the fact that we had no checks in place to make sure that we ignored patterns in the file that indicated images, which have similar patterns to links in markdown.
+- We walked through the logic of our program to determine the *bug* that was causing our symptom. It was due to the fact that we had no checks in place to make sure that we ignored patterns in the file that indicated images, which have similar patterns to links in markdown.
 
-<br>
 <br>
 [Home](/index.html)
