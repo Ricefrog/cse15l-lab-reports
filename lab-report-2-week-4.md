@@ -4,14 +4,111 @@
 
 <br>
 
-**Note:** *Although we were supposed to showcase three bug-fixes, our group only had to fix one.*
-
 ### Our Program
-Our program's goal was to take in a markdown file as input and output the URLs of all links within that file.
+*Our program's goal was to take in a markdown file as input and output the URLs of all links within that file.*
 <br>
 <br>
+
+## **Bug Fix 1**
+___
+*This bug was found on the original MarkdownParse file that was provided by the professor.*
+
 ### Failure-Inducing Input
-This the test file that caused a failure in our program. 
+This is the test file that caused a failure in our program.
+<br>
+<br>
+![test-file4](./screenshots/week4/test-file-4.png)
+<br>
+[https://github.com/JessalynWang/markdown-parse/blob/main/Group-test-file4.md?plain=1](https://github.com/JessalynWang/markdown-parse/blob/main/Group-test-file4.md?plain=1)
+<br>
+<br>
+The problem was that our program was getting stuck in an infinite loop.
+<br>
+<br>
+
+### The Symptom
+After inserting a print statement in the loop it was clear that the while loop within the getLinks function never exits.
+<br>
+<br>
+`bash java MarkdownParse test-file4.md`
+<br>
+![infinite-loop](./screenshots/week4/infinite-loop.png)
+<br>
+
+### The Bug
+The problem was that Java's 'indexOf' method returns -1 if the substring is not found. The end condition of the while loop is `currentIndex < markdown.length()`, and the 
+the way that `currentIndex` is incremented is by adding it to the index of last found 
+closing parentheses. However, if a closing parentheses was never found, the index that
+is added to `currentIndex` would be -1. This would result in the end condition of
+the while loop never being met because currentIndex would never read the value needed
+to exit.
+
+### The Fix
+
+This was the change we made.
+![diff-2](./screenshots/week4/diff-2.png)
+This will break the loop if we detect that there are no more starting brackets in the 
+rest of the file, which would indicate that there are no more links to extract.
+
+## **Bug Fix 2**
+___
+*This bug was found on the original MarkdownParse file that was provided by the professor.*
+
+### Failure-Inducing Input
+This is the test file that caused a failure in our program.
+<br>
+<br>
+![test-file4-2](./screenshots/week4/test-file4-2.png)
+<br>
+[https://github.com/Ricefrog/markdown-parse-week3/blob/main/test-file4.md?plain=1](https://github.com/Ricefrog/markdown-parse-week3/blob/main/test-file4.md?plain=1)
+<br>
+<br>
+The problem was that our program was not ignoring the characters that are escaped 
+using a backslash and therefore was incorrectly extracting links when backslashes were involved.
+<br>
+<br>
+
+### The Symptom
+<br>
+
+This was the terminal output after running the program on the failing test file:
+<br>
+`[https://something.com, some-page.html, \]`
+<br>
+<br>
+The correct output should look like this:
+<br>
+`[https://something.com, some-page.html, this is a link]`
+<br>
+<br>
+
+### The Bug
+The problem was that there was nothing in our program that told it ignore brackets and
+parentheses that had a backslash immediately before them. It was considering invalid links.
+
+### The Fix
+
+These are the relevant changes we made.
+![diff-3-1](./screenshots/week4/diff-3-1.png)
+![diff-3-2](./screenshots/week4/diff-3-2.png)
+<br>
+We created two helper functions for dealing with backslashes. The first, `isEscaped`, 
+just checks if the character immediately before the character at the current index is
+a backslash. The second, `advance`, will advance the current index by 2 until it
+reaches a character that is not escaped. It will then return that index. Within 
+the while loop of `getLinks` we use the `advance` function after each bracket/
+parentheses is found to move the index past the escaped characters we want to ignore. 
+This solution worked, and our program was able to ignore escaped characters when it 
+looked for links.
+
+
+## **Bug Fix 3**
+___
+*This bug was found on a version of the program where we had moved to a stack-based parsing algorithm.*
+<br>
+
+### Failure-Inducing Input
+This is the test file that caused a failure in our program. At this point we had moved onto a stack-based parser. This parser was able to pass all tests except one.
 <br>
 <br>
 ![test-file6](./screenshots/week4/test-file6.png)
@@ -57,6 +154,7 @@ The cause of our bug lay in the fact that the format for images in markdown is
 Because the format of images fit the pattern we were searching for, the program included the URLs/sources of images in its output.
 <br>
 <br>
+
 ### The Fix
 These are the changes we made:
 <br>
