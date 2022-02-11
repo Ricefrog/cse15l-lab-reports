@@ -45,7 +45,7 @@ To be able to access Github from my ieng6 box I needed to add its public RSA key
 
 <br>
 
-![pushing](./screenshots/week6/pushing.png)
+![pushing](./screenshots/week6/pushing2.png)
 
 *Here you can see me making a commit to my markdown-parse repo through the ieng6 box.*
 
