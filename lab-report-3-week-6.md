@@ -1,13 +1,8 @@
-# Lab Report 2
+# Lab Report 3
 
 ## Topic: Syncing Across Different Machines (Github Access from Remote Server)
 
 In this course every student was given access to an account on a UCSD pi-cluster they could SSH into. This server will be referred to henceforth as 'ieng6'. 
-
-Show where the public key you made is stored on Github and in your user account (screenshot)
-Show where the private key you made is stored on your user account (but not its contents) as a screenshot
-Show running git commands to commit and push a change to Github while logged into your ieng6 account
-Show a link for the resulting commit
 
 <br>
 <br>
